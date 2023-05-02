@@ -14,7 +14,7 @@ class PythonCdkBoilerplateStack(Stack):
     def __init__(self, scope: Construct, construct_id: str, **kwargs) -> None:
         super().__init__(scope, construct_id, **kwargs)
 
-        asset = ecr_assets.DockerImageAsset(self, 'DockerImageAsset', directory='.')
+        asset = ecr_assets.DockerImageAsset(self, 'DockerImageAsset', directory='.', file='docker/aws/Dockerfile')
 
         vpc = ec2.Vpc(
             self, 'Vpc',
